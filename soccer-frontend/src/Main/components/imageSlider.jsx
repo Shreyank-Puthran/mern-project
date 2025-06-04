@@ -26,7 +26,7 @@ const ImageSlider = () => {
   }, [current]);
 
   return (
-    <div className="relative overflow-hidden w-full h-[60vh] md:h-[100vh] ">
+    <div className="relative overflow-hidden w-full h-[100vh] ">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
