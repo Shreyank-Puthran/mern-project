@@ -26,7 +26,7 @@ const ImageSlider = () => {
   }, [current]);
 
   return (
-    <div className="relative overflow-hidden w-full h-[100vh] ">
+    <div className="relative overflow-hidden w-full h-[60vh] md:h-[100vh] ">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -42,35 +42,35 @@ const ImageSlider = () => {
             {/* Caption overlay */}
             <div
               className={`
-                absolute inset-0 
-                flex flex-col sm:items-end items-center justify-center 
-                text-white font-bold mr-30
-                transition-opacity duration-1000 text-3xl
-                ${
-                  loaded && index === current
-                    ? "opacity-100 scale-100"
-                    : "opacity-0 scale-0"
-                }
-              `}
+    absolute inset-0 
+    flex flex-col items-center sm:items-end justify-center 
+    text-white font-bold
+    transition-opacity duration-1000 text-3xl
+    ${
+      loaded && index === current
+        ? "opacity-100 scale-100"
+        : "opacity-0 scale-0"
+    }
+  `}
             >
               {index === 0 ? (
                 <>
                   <p
-                    className={`skew-6 transition-opacity duration-700 delay-100 md:text-[6rem] sm:text-center text-[#471715] ${
+                    className={`skew-6 transition-opacity duration-700 delay-100 md:text-[6rem] text-center sm:text-right text-[#471715] ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Welcome to
                   </p>
                   <p
-                    className={`skew-6 transition-opacity duration-700 md:text-[5rem] sm:text-center pl-5 my-4 delay-500 ${
+                    className={`skew-6 transition-opacity duration-700 md:text-[5rem] my-4 text-center sm:text-right pl-0 sm:pl-5 delay-500 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Real Soccer
                   </p>
                   <p
-                    className={`skew-6 transition-opacity duration-700 md:text-[4rem] sm:text-center pl-10 delay-900 ${
+                    className={`skew-6 transition-opacity duration-700 md:text-[4rem] text-center sm:text-right pl-0 sm:pl-10 delay-900 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -80,14 +80,14 @@ const ImageSlider = () => {
               ) : (
                 <>
                   <p
-                    className={`transition-opacity duration-700 md:text-[5rem] pl-5 my-4 sm:text-center delay-500 ${
+                    className={`transition-opacity duration-700 md:text-[5rem] my-4 text-center sm:text-right pl-0 sm:pl-5 delay-500 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Real Soccer
                   </p>
                   <p
-                    className={`transition-opacity duration-700 md:text-[4rem] pl-10 sm:text-center delay-900 ${
+                    className={`transition-opacity duration-700 md:text-[4rem] text-center sm:text-right pl-0 sm:pl-10 delay-900 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
