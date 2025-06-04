@@ -143,7 +143,7 @@ const Fixtures = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     { field: "date", headerName: "Date", flex: 1 },
     { field: "time", headerName: "Time", flex: 1 },
     { field: "location", headerName: "Location", flex: 1 },
@@ -219,7 +219,7 @@ const Fixtures = () => {
         mt="40px"
         height="75vh"
         sx={{
-          "& .MuiDataGrid-root": { border: "none" },
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
           "& .MuiDataGrid-cell": { border: "none" },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],

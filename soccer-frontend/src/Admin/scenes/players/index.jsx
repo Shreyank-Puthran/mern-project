@@ -118,7 +118,7 @@ const Players = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     { field: "name", headerName: "Name", flex: 1 },
     { field: "position", headerName: "Position", flex: 1 },
     { field: "team", headerName: "Team", flex: 1 },
@@ -126,7 +126,7 @@ const Players = () => {
       field: "goals",
       headerName: "Goals",
       type: "number",
-      width: 90,
+      width: 100,
       valueGetter: (params) => params.row.stats?.goals ?? 0,
     },
     {
@@ -184,7 +184,8 @@ const Players = () => {
       <Box
         height="75vh"
         sx={{
-          "& .MuiDataGrid-root": { border: "none" },
+          overflowX: "auto",
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
           "& .MuiDataGrid-cell": { border: "none" },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],

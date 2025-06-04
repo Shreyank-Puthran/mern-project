@@ -44,7 +44,7 @@ const Teams = () => {
       setTeams(formattedTeams);
     } catch (error) {
       console.log(error.message, "Failed to load teams");
-      setError(error.message)
+      setError(error.message);
     }
   };
 
@@ -106,7 +106,7 @@ const Teams = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     {
       field: "name",
       headerName: "Name",
@@ -188,18 +188,14 @@ const Teams = () => {
         team={selectedTeam}
         leagues={leagues}
       />
-      
+
       <Box
         mt="40px"
         height="75vh"
         maxWidth="100%"
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            border: "none",
-          },
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
+          "& .MuiDataGrid-cell": { border: "none" },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },

@@ -68,7 +68,10 @@ const Orders = () => {
       console.error("Error fetching order details", err);
     }
   };
-  const handleEdit = (row) => { setSelectedOrder(row); setOpenUpdate(true); };
+  const handleEdit = (row) => {
+    setSelectedOrder(row);
+    setOpenUpdate(true);
+  };
 
   const handleAddSubmit = async (data) => {
     try {
@@ -91,7 +94,7 @@ const Orders = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     { field: "user", headerName: "User", flex: 1 },
     { field: "itemsCount", headerName: "Items", flex: 0.5 },
     { field: "totalPrice", headerName: "Total", flex: 1 },
@@ -123,20 +126,57 @@ const Orders = () => {
   return (
     <Box m="20px">
       <Header title="Orders" subtitle="Manage Orders" />
-      <Button variant="contained" color="success" sx={{ mb: 2 }} startIcon={<AddIcon />} onClick={handleAdd}>
+      <Button
+        variant="contained"
+        color="success"
+        sx={{ mb: 2 }}
+        startIcon={<AddIcon />}
+        onClick={handleAdd}
+      >
         Add Order
       </Button>
-      <AddOrderModal open={openAdd} onClose={() => setOpenAdd(false)} onSubmit={handleAddSubmit} />
-      <UpdateOrderModal open={openUpdate} onClose={() => setOpenUpdate(false)} onSubmit={handleUpdateSubmit} order={selectedOrder} />
-      <ViewOrderModal open={openView} onClose={() => setOpenView(false)} order={selectedOrder} />
-      <Box mt="40px" height="75vh" sx={{
-        "& .MuiDataGrid-root": { border: "none" },
-        "& .MuiDataGrid-cell": { border: "none" },
-        "& .MuiDataGrid-columnHeaders": { backgroundColor: colors.blueAccent[700], borderBottom: "none" },
-        "& .MuiDataGrid-virtualScroller": { backgroundColor: colors.primary[400] },
-        "& .MuiDataGrid-footerContainer": { borderTop: "none", backgroundColor: colors.blueAccent[700] },
-      }}>
-        <DataGrid rows={orders} columns={columns} pageSizeOptions={[10,25,50]} initialState={{ pagination: { paginationModel: { pageSize: 10 }}}} checkboxSelection />
+      <AddOrderModal
+        open={openAdd}
+        onClose={() => setOpenAdd(false)}
+        onSubmit={handleAddSubmit}
+      />
+      <UpdateOrderModal
+        open={openUpdate}
+        onClose={() => setOpenUpdate(false)}
+        onSubmit={handleUpdateSubmit}
+        order={selectedOrder}
+      />
+      <ViewOrderModal
+        open={openView}
+        onClose={() => setOpenView(false)}
+        order={selectedOrder}
+      />
+      <Box
+        mt="40px"
+        height="75vh"
+        sx={{
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
+          "& .MuiDataGrid-cell": { border: "none" },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[700],
+          },
+        }}
+      >
+        <DataGrid
+          rows={orders}
+          columns={columns}
+          pageSizeOptions={[10, 25, 50]}
+          initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
+          checkboxSelection
+        />
       </Box>
     </Box>
   );

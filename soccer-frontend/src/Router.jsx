@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import AdminApp from "./Admin/AdminApp";
-import { Dashboard, Teams, Login, Users } from "./Admin/scenes";
+import Dashboard from "./Admin/scenes/dashboard";
+import Teams from "./Admin/scenes/teams";
+import Users from "./Admin/scenes/users";
+import Login from "./Admin/scenes/login";
 import Leagues from "./Admin/scenes/leagues";
 import AdminRoute from "./Admin/AdminRoute";
 import Players from "./Admin/scenes/players";

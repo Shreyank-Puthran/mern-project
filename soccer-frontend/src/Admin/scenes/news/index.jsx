@@ -98,7 +98,7 @@ const News = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     {
       field: "title",
       headerName: "Title",
@@ -189,12 +189,8 @@ const News = () => {
         height="75vh"
         maxWidth="100%"
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            border: "none",
-          },
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
+          "& .MuiDataGrid-cell": { border: "none" },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },

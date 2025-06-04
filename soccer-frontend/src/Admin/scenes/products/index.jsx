@@ -112,7 +112,7 @@ const Products = () => {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 200 },
+    { field: "id", headerName: "ID", width: 120 },
     { field: "name", headerName: "Name", flex: 1 },
     { field: "category", headerName: "Category", flex: 1 },
     { field: "price", headerName: "Price", flex: 1 },
@@ -183,7 +183,7 @@ const Products = () => {
         mt="40px"
         height="75vh"
         sx={{
-          "& .MuiDataGrid-root": { border: "none" },
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
           "& .MuiDataGrid-cell": { border: "none" },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.blueAccent[700],

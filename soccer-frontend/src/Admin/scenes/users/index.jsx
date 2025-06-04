@@ -43,7 +43,7 @@ const Users = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 250 },
+    { field: "id", headerName: "ID", width: 150 },
     {
       field: "name",
       headerName: "Name",
@@ -122,12 +122,8 @@ const Users = () => {
         height="75vh"
         flex={1}
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            border: "none",
-          },
+          "& .MuiDataGrid-root": { border: "none", minWidth: 900 },
+          "& .MuiDataGrid-cell": { border: "none" },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
           },
