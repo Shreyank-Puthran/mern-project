@@ -40,9 +40,9 @@ const Login = () => {
       }
 
       if (user.role === "admin") {
-        window.location.href = "/dashboard";
+        navigate("/dashboard");
       } else {
-        window.location.href = "/";
+        navigate("/");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Login Failed");
