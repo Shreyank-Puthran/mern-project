@@ -56,21 +56,21 @@ const ImageSlider = () => {
               {index === 0 ? (
                 <>
                   <p
-                    className={`skew-6 transition-opacity duration-700 delay-100 md:text-[6rem]  text-[#471715] ${
+                    className={`skew-6 transition-opacity duration-700 delay-100 md:text-[6rem] sm:text-center text-[#471715] ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Welcome to
                   </p>
                   <p
-                    className={`skew-6 transition-opacity duration-700 md:text-[5rem] pl-5 my-4 delay-500 ${
+                    className={`skew-6 transition-opacity duration-700 md:text-[5rem] sm:text-center pl-5 my-4 delay-500 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Real Soccer
                   </p>
                   <p
-                    className={`skew-6 transition-opacity duration-700 md:text-[4rem] pl-10 delay-900 ${
+                    className={`skew-6 transition-opacity duration-700 md:text-[4rem] sm:text-center pl-10 delay-900 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -80,14 +80,14 @@ const ImageSlider = () => {
               ) : (
                 <>
                   <p
-                    className={`transition-opacity duration-700 md:text-[5rem] pl-5 my-4 delay-500 ${
+                    className={`transition-opacity duration-700 md:text-[5rem] pl-5 my-4 sm:text-center delay-500 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     Real Soccer
                   </p>
                   <p
-                    className={`transition-opacity duration-700 md:text-[4rem] pl-10 delay-900 ${
+                    className={`transition-opacity duration-700 md:text-[4rem] pl-10 sm:text-center delay-900 ${
                       loaded && index === current ? "opacity-100" : "opacity-0"
                     }`}
                   >

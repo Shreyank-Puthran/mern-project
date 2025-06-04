@@ -138,23 +138,24 @@ const Home = () => {
 
       <section className="md:px-20 px-10 py-12 bg-[url('/player-bg.jpg')] bg-cover bg-center text-white">
         <div className="container mx-auto">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center">
-              <h2 className="text-3xl text-center font-semibold mb-6">
-                || Players
-              </h2>
+          <div className="md:flex-row flex flex-col items-center justify-between mb-4">
+            {/* Left side: heading + link */}
+            <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
+              <h2 className="text-3xl font-semibold mb-2">|| Players</h2>
               <a
-                className="block mx-auto text-sm text-center w-30 font-semibold mb-6 hover:text-[#aa4344] cursor-pointer"
+                className="text-sm font-semibold hover:text-[#aa4344] cursor-pointer"
                 href="#"
               >
                 View all players
               </a>
             </div>
-            <div className="flex items-center mb-6">
-              <button className="swiper-button-prev-custom text-xl bg-[#aa4344] p-2 rounded-full mx-2 text-white hover:cursor-pointer">
+
+            {/* Right side: Swiper nav buttons */}
+            <div className="flex items-center space-x-4">
+              <button className="swiper-button-prev-custom text-xl bg-[#aa4344] p-2 rounded-full text-white">
                 <FaChevronLeft />
               </button>
-              <button className="swiper-button-next-custom text-xl bg-[#aa4344] p-2 rounded-full mx-2 text-white hover:cursor-pointer">
+              <button className="swiper-button-next-custom text-xl bg-[#aa4344] p-2 rounded-full text-white">
                 <FaChevronRight />
               </button>
             </div>
