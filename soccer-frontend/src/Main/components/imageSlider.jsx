@@ -43,7 +43,7 @@ const ImageSlider = () => {
             <div
               className={`
                 absolute inset-0 
-                flex flex-col items-end justify-center 
+                flex flex-col sm:items-end items-center justify-center 
                 text-white font-bold mr-30
                 transition-opacity duration-1000 text-3xl
                 ${

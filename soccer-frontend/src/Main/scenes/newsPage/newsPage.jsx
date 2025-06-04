@@ -69,7 +69,7 @@ const Articles = () => {
           {category ? `Articles in “${category}”` : "Latest Articles"}
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {visibleList.map((item) => (
             <Link key={item._id} to={`/news/${item._id}`}>
               <div className="flex flex-col h-full space-y-4 bg-white shadow">
