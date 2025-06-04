@@ -1,0 +1,56 @@
+/* Font Family Import */
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+/* Tailwind */
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;*/
+
+/* Global Style */
+html,
+body,
+#root {
+  min-height: 100%;
+  min-width: 100%;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-track:hover {
+  background: #555;
+}
+
+/* For swiper icons */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+/* For swiper icons */
+
+/* For edit player and add player image upload imput */
+.fileInput {
+  margin-top: 16px;
+}
+
+.fileInput:hover {
+  /* background-color: #f0f0f0; */
+  opacity: 0.8;
+  cursor: pointer;
+}
+/* For edit player and add player image upload imput */

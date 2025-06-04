@@ -1,0 +1,5 @@
+// Tells Babel to transpile based on the current environment
+
+{
+    "presets": ["@babel/preset-env"]
+}

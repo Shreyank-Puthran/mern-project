@@ -1,0 +1,70 @@
+VISUAL FLOW — Frontend Routes vs Backend API Routes
+
+🌐 USER TYPES URL:
+--------------------------------------
+https://yoursite.com/admin/news
+
+            ↓ (Browser request)
+
+💻 REACT FRONTEND ROUTER (React Router)
+--------------------------------------
+<Route path="/admin/news" element={<NewsPage />} />
+
+            ↓ (Component rendered)
+
+🧠 REACT COMPONENT (NewsPage.jsx)
+--------------------------------------
+useEffect(() => {
+  axios.get("/api/news")  // ← Calls backend
+}, [])
+
+            ↓ (API call using Axios)
+
+🚀 EXPRESS BACKEND ROUTES (Node/Express)
+--------------------------------------
+GET /api/news
+  → Fetch news from MongoDB
+  → Send response: res.json([...])
+
+            ↓
+
+📦 RESPONSE TO FRONTEND
+--------------------------------------
+[
+  { title: "Matchday Results", content: "...", ... },
+  ...
+]
+
+            ↓
+
+🖼️ FRONTEND RENDERS DATA
+--------------------------------------
+<NewsCard title="Matchday Results" ... />
+
+
+
+for shop page-
+
+User visits URL:
+  http://localhost:3000/shop?category=Shoes
+               │
+               ▼
+React Router’s useLocation() gives:
+  location.search = "?category=Shoes"
+               │
+               ▼
+URLSearchParams(location.search):
+  queryParams.get("category") → "Shoes"
+               │
+               ▼
+Set initialCategory state:
+  initialCategory = "Shoes"
+               │
+               ▼
+Filter products where product.category === "Shoes"
+               │
+               ▼
+Show only "Shoes" products in the list
+               │
+               ▼
+Dropdown shows "Shoes" as selected category

@@ -1,0 +1,12 @@
+| **Property**                | **Description**                         | **Example Values**                                                                   | **Tailwind Support**                                  |
+| --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| `animation-name`            | Name of the keyframes to apply          | `fade-in`, `bounce`, `slide-left`, `wiggle`                                          | Defined in `tailwind.config.js` under `keyframes`     |
+| `animation-duration`        | Duration of the animation               | `200ms`, `500ms`, `1s`, `2.5s`                                                       | Used in shorthand `animation` config                  |
+| `animation-delay`           | Time to wait before animation starts    | `0s`, `100ms`, `300ms`, `1s`                                                         | Not built-in; add custom or inline style              |
+| `animation-iteration-count` | Number of times animation should repeat | `1`, `2`, `infinite`, `3`                                                            | Set in shorthand; e.g., `"wiggle 1s linear infinite"` |
+| `animation-direction`       | Direction the animation runs            | `normal`, `reverse`, `alternate`, `alternate-reverse`                                | Add in custom animation config                        |
+| `animation-timing-function` | Speed curve of the animation            | `ease`, `linear`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier(0.4, 0, 1, 1)` | Set in `animation` config                             |
+| `animation-fill-mode`       | Styles applied before/after animation   | `none`, `forwards`, `backwards`, `both`                                              | Set in `animation` config                             |
+| `animation`                 | Shorthand for all above properties      | `slide-left 1s ease-in 0.5s infinite alternate forwards`                             | Combine keyframe in `tailwind.config.js`              |
+
+

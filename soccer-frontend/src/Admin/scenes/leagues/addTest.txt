@@ -1,0 +1,192 @@
+import React, { useState } from "react";
+import {
+  Modal,
+  Box,
+  Typography,
+  TextField,
+  Button,
+  IconButton,
+  Divider
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import CloseIcon from "@mui/icons-material/Close";
+import api from "../../../api/axios";
+import { tokens } from "../../theme";
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%", left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: "90%", sm: 600 },
+  p: { xs: 2, sm: 4 },
+  bgcolor: "background.paper",
+  borderRadius: 2,
+  boxShadow: 24,
+  maxHeight: "90vh",
+  overflowY: "auto",
+};
+
+const AddLeagueModal = ({ open, onClose, refreshLeagues }) => {
+  const theme = useTheme(), colors = tokens(theme.palette.mode);
+
+  // league form
+  const [leagueForm, setLeagueForm] = useState({
+    name: "",
+    country: "",
+    logo: null,
+  });
+  // teams + stats
+  const [teamsStats, setTeamsStats] = useState([
+    // default one empty entry; remove or add with addTeamEntry()
+    { team: "", home: { matchesPlayed: 0, wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0 }, away: { matchesPlayed: 0, wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0 } }
+  ]);
+
+  const handleLeagueChange = e => {
+    const { name, value, files } = e.target;
+    setLeagueForm(f => ({
+      ...f,
+      [name]: name === "logo" ? files[0] : value
+    }));
+  };
+
+  const handleTeamStatChange = (idx, venue, key) => e => {
+    const val = Number(e.target.value);
+    setTeamsStats(ts => {
+      const copy = [...ts];
+      copy[idx][venue][key] = val;
+      return copy;
+    });
+  };
+  const handleSelectTeam = idx => e => {
+    const id = e.target.value;
+    setTeamsStats(ts => {
+      const copy = [...ts];
+      copy[idx].team = id;
+      return copy;
+    });
+  };
+  const addTeamEntry = () => {
+    setTeamsStats(ts => [
+      ...ts,
+      { team: "", home: { matchesPlayed: 0, wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0 }, away: { matchesPlayed: 0, wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0 } }
+    ]);
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    // 1️⃣ Create the league
+    const data = new FormData();
+    data.append("name", leagueForm.name);
+    data.append("country", leagueForm.country);
+    data.append("logo", leagueForm.logo);
+    const { data: createRes } = await api.post("/league/add-league", data, {
+      headers: { "Content-Type": "multipart/form-data" }
+    });
+    const leagueId = createRes.league._id;
+
+    // 2️⃣ For each team entry, add + stats in one call:
+    //    (we enhanced addTeamToLeague to accept home & away payload)
+    await Promise.all(
+      teamsStats.map(entry =>
+        api.post(
+          `/league/add-team-to-league/${leagueId}`,
+          {
+            teamId: entry.team,
+            home: entry.home,
+            away: entry.away
+          },
+        )
+      )
+    );
+
+    // 3️⃣ Refresh and close
+    refreshLeagues();
+    onClose();
+    // reset forms
+    setLeagueForm({ name: "", country: "", logo: null });
+    setTeamsStats([]);
+  };
+
+  return (
+    <Modal open={open} onClose={onClose}>
+      <Box sx={{ ...modalStyle, backgroundColor: colors.primary[400] }}>
+        <Box display="flex" justifyContent="space-between" mb={2}>
+          <Typography variant="h6" color={colors.greenAccent[400]}>
+            Add New League & Teams
+          </Typography>
+          <IconButton onClick={onClose}>
+            <CloseIcon sx={{ color: colors.redAccent[400] }} />
+          </IconButton>
+        </Box>
+
+        <form onSubmit={handleSubmit}>
+
+          {/* League metadata */}
+          <TextField
+            name="name" label="League Name"
+            fullWidth margin="normal" required
+            value={leagueForm.name} onChange={handleLeagueChange}
+          />
+          <TextField
+            name="country" label="Country"
+            fullWidth margin="normal" required
+            value={leagueForm.country} onChange={handleLeagueChange}
+          />
+          <Button variant="outlined" component="label" sx={{ my:2 }}>
+            Upload Logo*
+            <input type="file" name="logo" hidden accept="image/*"
+              onChange={handleLeagueChange}
+            />
+          </Button>
+
+          <Divider sx={{ my:2 }} />
+
+          {/* Teams + stats */}
+          {teamsStats.map((entry, idx) => (
+            <Box key={idx} mb={2} p={2} border="1px solid grey" borderRadius={1}>
+              <TextField
+                select label="Team" fullWidth
+                value={entry.team}
+                onChange={handleSelectTeam(idx)}
+                SelectProps={{ native: false }}
+                // map your teams into MenuItem here...
+              >
+                {/* ... */}
+              </TextField>
+
+              {["home","away"].map(venue => (
+                <Box key={venue} mt={1}>
+                  <Typography>{venue.toUpperCase()}</Typography>
+                  <TextField
+                    type="number" label="Matches"
+                    value={entry[venue].matchesPlayed}
+                    onChange={handleTeamStatChange(idx,venue,"matchesPlayed")}
+                    sx={{ mr:1, width: "30%" }}
+                  />
+                  <TextField
+                    type="number" label="Wins"
+                    value={entry[venue].wins}
+                    onChange={handleTeamStatChange(idx,venue,"wins")}
+                    sx={{ mr:1, width: "30%" }}
+                  />
+                  {/* ... draws, losses, goalsFor, goalsAgainst */}
+                </Box>
+              ))}
+
+            </Box>
+          ))}
+
+          <Button onClick={addTeamEntry} sx={{ mb:2 }}>
+            Add Another Team
+          </Button>
+
+          <Button type="submit" variant="contained" fullWidth>
+            Create League & Teams
+          </Button>
+        </form>
+      </Box>
+    </Modal>
+  );
+};
+
+export default AddLeagueModal;
