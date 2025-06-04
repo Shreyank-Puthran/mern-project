@@ -46,6 +46,7 @@ const ImageSlider = () => {
     flex flex-col items-center sm:items-end justify-center 
     text-white font-bold
     transition-opacity duration-1000 text-3xl
+    px-10
     ${
       loaded && index === current
         ? "opacity-100 scale-100"
