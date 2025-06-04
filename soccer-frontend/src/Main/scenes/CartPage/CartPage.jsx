@@ -23,7 +23,7 @@ const CartPage = () => {
   );
 
   return (
-    <section className="md:px-20 px-15 py-12 bg-white text-gray-800">
+    <section className="md:px-20 px-10 py-12 bg-white text-gray-800">
       <div className="max-w-full mx-auto py-4">
         <h1 className="text-3xl font-bold mb-8 text-center">Cart</h1>
 

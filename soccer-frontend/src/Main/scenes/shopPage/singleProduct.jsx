@@ -100,7 +100,7 @@ const SingleProduct = () => {
           {successMessage}
         </div>
       )}
-      <section className="py-12 px-15 md:px-20 bg-white flex flex-col md:flex-row gap-8">
+      <section className="py-12 px-10 md:px-20 bg-white flex flex-col md:flex-row gap-8">
         <div className="md:w-2/3">
           <div className="col-span-1 md:col-span-2 w-full flex  flex-col md:flex-row space-y-2">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:w-[50%]">

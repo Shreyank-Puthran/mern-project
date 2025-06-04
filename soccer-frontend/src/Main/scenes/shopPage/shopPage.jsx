@@ -94,7 +94,7 @@ const Shop = () => {
   }
 
   return (
-    <section className="md:px-20 my-20 px-6 py-12 bg-white">
+    <section className="md:px-20 my-20 px-10 py-12 bg-white">
       {/* Success toast */}
       {successMessage && (
         <div className="bg-green-100 text-green-700 px-4 py-2 rounded mb-4 text-center font-semibold">

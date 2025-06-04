@@ -120,7 +120,7 @@ const SinglePlayer = () => {
   return (
     <>
       {/* TopBar */}
-      <div className="bg-[#a73333] text-white mt-30 py-12 px-15 md:px-20 flex flex-col md:flex-row items-center md:justify-between gap-6">
+      <div className="bg-[#a73333] text-white mt-30 py-12 px-10 md:px-20 flex flex-col md:flex-row items-center md:justify-between gap-6">
         <div className="flex items-center space-x-4">
           <img
             className="w-20 h-20 md:w-32 md:h-32 rounded-full"
@@ -149,7 +149,7 @@ const SinglePlayer = () => {
       </div>
 
       {/* Tabs */}
-      <div className="bg-gray-100 py-6 px-15 md:px-20 flex flex-col md:flex-row items-center md:justify-between gap-4">
+      <div className="bg-gray-100 py-6 px-10 md:px-20 flex flex-col md:flex-row items-center md:justify-between gap-4">
         <div className="flex items-center space-x-4">
           <span
             onClick={() => handleTabClick("stats")}
@@ -181,7 +181,7 @@ const SinglePlayer = () => {
       </div>
 
       {/* Content */}
-      <section className="py-12 px-15 md:px-20 bg-white flex flex-col md:flex-row gap-8">
+      <section className="py-12 px-10 md:px-20 bg-white flex flex-col md:flex-row gap-8">
         {/* Left Section */}
         <div
           className={`w-full md:w-2/3 transition-opacity duration-300 ${

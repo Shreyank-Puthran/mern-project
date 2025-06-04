@@ -30,7 +30,7 @@ const Profile = () => {
 
   return (
     <>
-      <section className="md:px-20 px-15 py-12">
+      <section className="md:px-20 px-10 py-12">
         {/* {console.log(orders)} */}
         <div className=" mx-auto ">
           {/* User Info Section */}

@@ -52,7 +52,7 @@ const Footer = () => {
 
   return (
     <footer className=" bottom-0 bg-[#262626] text-gray-300 text-sm">
-      <div className=" mx-auto md:px-20 px-15 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className=" mx-auto md:px-20 px-10 py-12 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* About */}
         <div>
           <h3 className="text-white text-xl font-semibold mb-3">About Us</h3>

@@ -62,7 +62,7 @@ const FixtureTable = () => {
   }
 
   return (
-    <section className="md:px-20 px-5 py-12">
+    <section className="md:px-20 px-10 py-12">
       {console.log(groupedFixtures)}
       {Object.entries(groupedFixtures).map(([monthYear, fixtures]) => (
         <div key={monthYear} className="mb-8">

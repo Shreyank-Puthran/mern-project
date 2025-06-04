@@ -63,7 +63,7 @@ const Articles = () => {
   }
 
   return (
-    <section className="py-12 md:px-20 px-6 bg-[#f0f0f0]">
+    <section className="py-12 md:px-20 px-10 bg-[#f0f0f0]">
       <div>
         <h2 className="text-2xl font-bold mb-6 text-[#aa4344]">
           {category ? `Articles in “${category}”` : "Latest Articles"}

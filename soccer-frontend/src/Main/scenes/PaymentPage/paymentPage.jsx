@@ -42,7 +42,7 @@ const PaymentPage = () => {
 
   return (
     <>
-      <section className="md:px-20 px-15 py-12">
+      <section className="md:px-20 px-10 py-12">
         <div className="mx-auto mt-12 bg-white shadow">
           <h2 className="text-2xl font-semibold mb-4">Payment</h2>
           {error && (

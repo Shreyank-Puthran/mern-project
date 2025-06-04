@@ -136,7 +136,7 @@ const Home = () => {
 
       {/* Players Carousel */}
 
-      <section className="md:px-20 px-15 py-12 bg-[url('/player-bg.jpg')] bg-cover bg-center text-white">
+      <section className="md:px-20 px-10 py-12 bg-[url('/player-bg.jpg')] bg-cover bg-center text-white">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center">
@@ -178,9 +178,9 @@ const Home = () => {
             }}
           >
             {players.map((player, index) => (
-              <SwiperSlide key={index}>
-                <Link key={player._id} to={`/players/${player._id}`}>
-                  <div className="text-center rounded shadow">
+              <SwiperSlide key={index} className="!w-full max-w-xs mx-auto">
+                <Link to={`/players/${player._id}`}>
+                  <div className="text-center rounded shadow overflow-hidden">
                     <img
                       src={player.imageUrl}
                       alt={`The player ${player.name}`}
@@ -197,7 +197,7 @@ const Home = () => {
       </section>
 
       {/* League Table - Shop - Recent News */}
-      <section className="py-12 md:px-20 px-15 bg-white">
+      <section className="py-12 md:px-20 px-10 bg-white">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-stretch">
           {/* League Table*/}
           <div className="md:col-start-1 md:col-end-2 h-full flex flex-col md:row-start-1 md:row-end-3">
@@ -253,7 +253,10 @@ const Home = () => {
                 <tfoot className="px-4 py-2 bg-[#aa4344] hover:bg-[#aa4344]/90 text-white text-center hover:cursor-pointer">
                   <tr>
                     <td className=" px-2 py-2 font-bold" colSpan={5}>
-                      <Link to={"/league-page"} className="hover:cursor-pointer">
+                      <Link
+                        to={"/league-page"}
+                        className="hover:cursor-pointer"
+                      >
                         View Full Table
                       </Link>
                     </td>
@@ -327,7 +330,7 @@ const Home = () => {
       </section>
 
       {/* Top Scorers & Featured Video */}
-      <section className="py-12 md:px-20 px-15 bg-[url('/video-bg.jpg')] bg-cover bg-center text-white">
+      <section className="py-12 md:px-20 px-10 bg-[url('/video-bg.jpg')] bg-cover bg-center text-white">
         <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Top Scorers */}
           <div className="h-full">
@@ -384,7 +387,7 @@ const Home = () => {
       </section>
 
       {/* Fixtures & Promotions */}
-      <section className="py-12 md:px-20 px-15 bg-white">
+      <section className="py-12 md:px-20 px-10 bg-white">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Fixtures List */}
           <div className="w-full">

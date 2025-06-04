@@ -38,7 +38,7 @@ const TeamPlayer = () => {
   return (
     <>
       {/* Players section */}
-      <section className="md:px-20 px-15 py-12">
+      <section className="md:px-20 px-10 py-12">
         <h3 className="mx-auto text-center text-2xl font-semibold my-5 text-[#aa4344] underline underline-offset-8">Players</h3>
         <div className="grid container text-[#353535] mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-lg">
           

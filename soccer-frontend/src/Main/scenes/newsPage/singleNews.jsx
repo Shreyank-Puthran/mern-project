@@ -51,7 +51,7 @@ const NewsArticle = () => {
 
   return (
     <>
-      <section className="py-12 px-15 md:px-20 bg-white flex flex-col md:flex-row gap-8">
+      <section className="py-12 px-10 md:px-20 bg-white flex flex-col md:flex-row gap-8">
         {/* Left Section */}
         <div className="w-full md:w-2/3">
           <div>

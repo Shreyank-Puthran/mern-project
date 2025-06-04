@@ -39,7 +39,7 @@ const OrderStatusPage = () => {
 
   return (
     <>
-      <section className="md:px-20 px-15 py-12 text-[#787878]">
+      <section className="md:px-20 px-10 py-12 text-[#787878]">
         <div className=" mx-auto ">
           <h1 className="text-3xl font-bold mb-6">Order Details</h1>
 

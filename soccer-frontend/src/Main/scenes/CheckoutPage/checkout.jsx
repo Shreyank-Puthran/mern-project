@@ -58,7 +58,7 @@ const CheckoutPage = () => {
   };
 
   return (
-    <section className="md:px-20 px-15 py-12 bg-white text-gray-800">
+    <section className="md:px-20 px-10 py-12 bg-white text-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mx-auto">
         {/* Shipping Info Form */}
         <form onSubmit={handleSubmit} className="space-y-4">

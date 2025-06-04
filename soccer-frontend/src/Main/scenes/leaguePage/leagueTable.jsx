@@ -22,7 +22,7 @@ const LeagueTable = () => {
   }, []);
   return (
     <>
-      <div className="mx-auto md:px-20 px-15 py-12 flex flex-col">
+      <div className="mx-auto md:px-20 px-10 py-12 flex flex-col">
         <div className="flex-grow overflow-x-auto">
   <table className="min-w-[900px] table-auto mb-4 w-full">
             <thead>
