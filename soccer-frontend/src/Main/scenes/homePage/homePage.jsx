@@ -159,6 +159,7 @@ const Home = () => {
               </button>
             </div>
           </div>
+          {/* <div className="px-4 sm:px-6 md:px-8"></div> */}
           <Swiper
             slidesPerView={4}
             spaceBetween={20}
@@ -183,7 +184,7 @@ const Home = () => {
                     <img
                       src={player.imageUrl}
                       alt={`The player ${player.name}`}
-                      className="w-full h-auto object-cover rounded hover:cursor-pointer transition duration-600 ease-in-out hover:scale-105"
+                      className="w-full h-48 object-cover rounded hover:cursor-pointer transition duration-600 ease-in-out hover:scale-105"
                     />
                     <p className="mt-2 font-bold">{player.name}</p>
                     <p className="text-sm text-gray-300">{player.position}</p>
@@ -252,9 +253,9 @@ const Home = () => {
                 <tfoot className="px-4 py-2 bg-[#aa4344] hover:bg-[#aa4344]/90 text-white text-center hover:cursor-pointer">
                   <tr>
                     <td className=" px-2 py-2 font-bold" colSpan={5}>
-                      <a href="/league-page" className="hover:cursor-pointer">
+                      <Link to={"/league-page"} className="hover:cursor-pointer">
                         View Full Table
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 </tfoot>
@@ -264,7 +265,7 @@ const Home = () => {
 
           {/* Shop Link Image */}
           <div className="md:col-start-1 md:col-end-2 md:row-start-3 md:row-end-4 relative group">
-            <a href="/shop">
+            <Link to={"/shop"}>
               <img
                 src={shop}
                 alt="Shop Link"
@@ -276,7 +277,7 @@ const Home = () => {
                   <FaLink />
                 </span>
               </div>
-            </a>
+            </Link>
           </div>
           {/* Recent News: */}
           <div className="md:col-start-2 md:col-end-4 md:row-start-1 md:row-end-4">
