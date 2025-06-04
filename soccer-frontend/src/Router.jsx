@@ -12,7 +12,7 @@ import News from "./Admin/scenes/news";
 // import App from "./Main/App"
 import Header from "./Main/components/header";
 import Footer from "./Main/components/footer";
-import Home from "./Main/scenes/HomePage/homePage";
+import Home from "./Main/scenes/homePage/homePage";
 import Register from "./Main/scenes/register/register";
 import LeagueTable from "./Main/scenes/leaguePage/leagueTable";
 import TeamPlayer from "./Main/scenes/teamPage/teamPage";
