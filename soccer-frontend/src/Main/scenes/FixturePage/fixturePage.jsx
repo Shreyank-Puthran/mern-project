@@ -80,8 +80,8 @@ const FixtureTable = () => {
                   bgClasses[i % bgClasses.length]
                 } text-[#5b5e63] text-lg text-center px-3 py-4`}
               >
-                <div className="flex items-center w-full">
-                  <div className="flex-1 flex items-center   gap-2">
+                <div className="flex flex-col sm:flex-row items-center w-full gap-2 sm:gap-0">
+                  <div className="flex-1 flex items-center gap-2 justify-start">
                     <img
                       className="w-8 h-8 object-contain"
                       src={match.teamHome.logoUrl}
@@ -90,7 +90,7 @@ const FixtureTable = () => {
                     <span className="font-semibold">{match.teamHome.name}</span>
                   </div>
 
-                  <div className="text-center">VS</div>
+                  <div className="text-center my-2 sm:my-0">VS</div>
 
                   <div className="flex-1 flex items-center gap-2 justify-end">
                     <span className="font-semibold">{match.teamAway.name}</span>
