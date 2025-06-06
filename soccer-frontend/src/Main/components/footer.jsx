@@ -91,7 +91,7 @@ const Footer = () => {
                   <li className="flex items-center justify-start py-4 border-b-2">
                     <span>
                       <img
-                        className="h-15 w-15 "
+                        className="md:h-15 md:w-15 w-10 h-10"
                         src={n.imageUrl}
                         alt={n.title}
                       />
@@ -164,7 +164,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center text-base bg-black py-4 text-xs text-gray-500 border-t border-gray-700">
-        © Copyright 2025, Discorp — Powered by MERN
+        © Copyright 2025 — Powered by MERN
       </div>
     </footer>
   );
