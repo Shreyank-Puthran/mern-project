@@ -346,7 +346,7 @@ const Home = () => {
                       key={name._id}
                       className="flex items-center space-x-3 pb-5 border-b-2 border-white"
                     >
-                      <div className="w-20 h-20 flex items-center justify-center">
+                      <div className="md:w-20 md:h-20 w-15 h-15 flex items-center justify-center">
                         <img
                           className="h-full w-full rounded-full"
                           src={name.imageUrl}
