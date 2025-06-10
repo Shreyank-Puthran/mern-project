@@ -142,12 +142,12 @@ const Home = () => {
             {/* Left side: heading + link */}
             <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
               <h2 className="text-3xl font-semibold mb-2">|| Players</h2>
-              <a
+              <Link
                 className="text-sm font-semibold hover:text-[#aa4344] cursor-pointer"
-                href="#"
+                to={"/team-page"}
               >
                 View all players
-              </a>
+              </Link>
             </div>
 
             {/* Right side: Swiper nav buttons */}
@@ -182,11 +182,15 @@ const Home = () => {
               <SwiperSlide key={index} className="!w-full max-w-xs mx-auto">
                 <Link to={`/players/${player._id}`}>
                   <div className="text-center rounded shadow overflow-hidden">
-                    <img
-                      src={player.imageUrl}
-                      alt={`The player ${player.name}`}
-                      className="w-full h-48 object-cover rounded hover:cursor-pointer transition duration-600 ease-in-out hover:scale-105"
-                    />
+                    <div className="w-full h-full relative group">
+                      <img
+                        src={player.imageUrl}
+                        alt={`The player ${player.name}`}
+                        className="w-full h-48 object-cover rounded cursor-pointer transition duration-600 ease-in-out"
+                      />
+                      <div className="hidden md:flex absolute top-0 left-0 w-full h-full bg-[#aa4344]/60 flex items-center justify-center text-white opacity-0 hover:cursor-pointer group-hover:opacity-100 transition-opacity duration-500 delay-300"></div>
+                    </div>
+
                     <p className="mt-2 font-bold">{player.name}</p>
                     <p className="text-sm text-gray-300">{player.position}</p>
                   </div>

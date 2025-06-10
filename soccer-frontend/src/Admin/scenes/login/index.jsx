@@ -4,9 +4,10 @@
 // Discorp - pd - Doombringer
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../../../api/axios";
 import { useCart } from "../../../Main/scenes/CartPage/CartContext";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -83,9 +84,9 @@ const Login = () => {
           </button>
           <p className="text-lg text-center font-bold mt-5">
             Don't have an account?{" "}
-            <a className="hover:text-[#aa4344]" href="/register">
+            <Link className="hover:text-[#aa4344]" to={"/register"}>
               SignUp now
-            </a>
+            </Link>
           </p>
           {/* {" "} */}
         </form>

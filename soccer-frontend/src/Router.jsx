@@ -66,6 +66,7 @@ const AppRouter = () => {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/order/:id" element={<OrderStatusPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route element={<AdminRoute />}>
           <Route element={<AdminApp />}>
@@ -78,6 +79,7 @@ const AppRouter = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/news" element={<News />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />

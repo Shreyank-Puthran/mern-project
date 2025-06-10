@@ -1,14 +1,6 @@
 const NotFound = () => {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full">
-        <body class="h-full">
-        ```
-      */}
       {/* bg-[url('/video-bg.jpg')] */}
       <main className="grid h-[100vh] place-items-center bg-[#f0f0f0] px-6 py-15 sm:py-10 lg:px-8">
         <div className="text-center">
